@@ -69,7 +69,7 @@ async def on_message(message):
 
     # The command is a barplot command
     elif isBarPlot(_command):
-        print(extractBarPlotParameters(_command))
+        await barplot(message, _command)
 
     # Else just mock
     elif _command:
