@@ -5,6 +5,7 @@ Author: Mohammad Arafat Zaman
 '''
 import discord
 from commands.mock_reply import mock_reply
+from commands.barPlot.isBarPlot import isBarPlot
 from core.is_command import is_command
 from core.validation.success import success_message
 from core.validation import error_message, warning_message, success_message
@@ -64,9 +65,12 @@ async def on_message(message):
     
     elif _command == "preview_error()":
         await error_message(message)
-        
 
+    # The command is a barplot command
+    elif isBarPlot(_command):
+        print("YES IT IS BAR PLOT")
 
+    # Else just mock
     elif _command:
         await mock_reply(message, _command)
 
