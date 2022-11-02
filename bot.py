@@ -6,6 +6,7 @@ Author: Mohammad Arafat Zaman
 import discord
 from commands.mock_reply import mock_reply
 from commands.barPlot.isBarPlot import isBarPlot
+from commands.barPlot import *
 from core.is_command import is_command
 from core.validation.success import success_message
 from core.validation import error_message, warning_message, success_message
@@ -68,7 +69,7 @@ async def on_message(message):
 
     # The command is a barplot command
     elif isBarPlot(_command):
-        print("YES IT IS BAR PLOT")
+        print(extractBarPlotParameters(_command))
 
     # Else just mock
     elif _command:
