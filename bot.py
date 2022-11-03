@@ -55,25 +55,27 @@ async def on_message(message):
     # If the message is requested to the bot, prefix = "[Appat]"
     _command = is_command(message.content)
 
-    if _command == "test_embed()":
-        await test_embed(message)
+    # Execute each command case ONLY if it is a valid command
+    if _command != None:
+        if _command == "test_embed()":
+            await test_embed(message)
 
-    elif _command == "preview_success()":
-        await success_message(message)
+        elif _command == "preview_success()":
+            await success_message(message)
 
-    elif _command == "preview_warning()":
-        await warning_message(message)
-    
-    elif _command == "preview_error()":
-        await error_message(message)
+        elif _command == "preview_warning()":
+            await warning_message(message)
+        
+        elif _command == "preview_error()":
+            await error_message(message)
 
-    # The command is a barplot command
-    elif isBarPlot(_command):
-        await barplot(message, _command)
+        # The command is a barplot command
+        elif isBarPlot(_command):
+            await barplot(message, _command)
 
-    # Else just mock
-    elif _command:
-        await mock_reply(message, _command)
+        # Else just mock
+        elif _command:
+            await mock_reply(message, _command)
 
 
 client.run(token)
