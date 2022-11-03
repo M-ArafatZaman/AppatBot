@@ -14,7 +14,7 @@ async def barplot(ctx, _cmd: str):
     x: List[int] = [i+1 for i in range(len(y))]
 
     # Plot data
-    plt.bar(x, y, label="Numbers")
+    plt.bar(x, y, label="Numbers visualized")
     plt.legend(loc="upper right")
     fig = plt.gcf()
 
