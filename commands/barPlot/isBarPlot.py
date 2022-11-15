@@ -33,9 +33,13 @@ def extractBarPlotParameters(command: str) -> List[float]:
     command = command.strip()
     params: str = command[len(BAR_PLOT_PREFIX):].strip()
 
-    parameters: List[str] = params.split(",")
+    parameters: List[str] 
+    if "," in params:
+        parameters = params.split(",")
+    else:
+        parameters = params.split(" ")
 
-    barPlotParameters: List[float] = [float(i) for i in parameters]
+    barPlotParameters: List[float] = [float(i.strip()) for i in parameters]
 
     return barPlotParameters
     
