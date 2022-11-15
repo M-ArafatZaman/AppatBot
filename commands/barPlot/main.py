@@ -26,3 +26,4 @@ async def barplot(ctx, _cmd: str):
     plt.close()
     
     await ctx.channel.send(file=discord.File(buf, "plot.png"))
+    buf.close()
