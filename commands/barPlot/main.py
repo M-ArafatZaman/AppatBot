@@ -33,6 +33,13 @@ async def barplot(ctx: discord.Message, _cmd: str):
             # Close buffer
             buffer.close()
 
+        else:
+            # Else something went wrong
+            await error_message(
+                ctx,
+                title="An external API returned a server error."
+            )
+
     except Exception:
         await error_message(
             ctx,
