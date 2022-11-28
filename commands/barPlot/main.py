@@ -12,10 +12,10 @@ async def barplot(ctx: discord.Message, _cmd: str):
 
     ENDPOINT = "https://funapi.onrender.com/api/barplot/"
 
-    # Generate y
     
     # Try parsing the parameters
     try:
+        # Generate y
         y: List[float] = extractBarPlotParameters(_cmd)
 
         # Parse is successful, send request
